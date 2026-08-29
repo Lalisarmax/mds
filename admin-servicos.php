@@ -7,6 +7,7 @@ session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] != 'cuidador') {
     header('Location: login.php');
     exit;
+$servicos = [];
 }
 
 include 'conexao.php';
@@ -19,7 +20,6 @@ if (isset($_SESSION['user_id'])) {
 $mensagem = '';
 $erro = '';
 
-$servicos = [];
 $sql = "SELECT * FROM servicos ORDER BY nome ASC";
 $result = $conn->query($sql);
 if ($result) {
