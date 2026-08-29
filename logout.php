@@ -1,5 +1,7 @@
 <?php
 session_start();
+<?php
+session_start();
 
 // Destruir sessão
 session_destroy();
@@ -11,6 +13,10 @@ echo "<script>
     localStorage.removeItem('userName');
     localStorage.removeItem('userId');
     window.location.href = 'login.php';
+</script>";
+exit;
+?>
+
 </script>";
 exit;
 ?>
